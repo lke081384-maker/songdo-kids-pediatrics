@@ -3850,6 +3850,94 @@ tbody th {
 
 /* ───── 고대비 모드 ───── */
 
+/* ── 자주 묻는 질문 ── */
+/* 첫 화면 h1 안에 들어간 병원 이름 줄: 제목 글꼴 대신 본문 글꼴 */
+.hero h1 .hero-kicker {
+  display: flex;
+  font-family: var(--font-body);
+  line-height: 1.5;
+}
+
+.faq-jump ul {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+}
+
+.faq-jump a {
+  display: inline-flex;
+  align-items: center;
+  min-height: 44px;
+  padding: 0 16px;
+  border: 1.5px solid var(--field);
+  border-radius: 999px;
+  background: #fff;
+  font-weight: 600;
+  text-decoration: none;
+}
+
+@media (hover: hover) {
+  .faq-jump a:hover {
+    border-color: var(--mint-deep);
+    background: var(--sage);
+  }
+}
+
+.faq-q {
+  position: relative;
+  padding-left: 1.7em;
+  font-size: 1.125rem;
+  line-height: 1.45;
+}
+
+.faq-q::before {
+  content: "Q";
+  position: absolute;
+  left: 0;
+  color: var(--pink-deep);
+  font-weight: 800;
+}
+
+.prose > .faq-q {
+  margin-top: 30px;
+}
+
+.prose > h2 + .faq-q {
+  margin-top: 18px;
+}
+
+.prose > .faq-a {
+  margin-top: 8px;
+  padding-left: 1.9125em;
+}
+
+.faq-grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 14px;
+}
+
+.faq-card {
+  padding: 22px 24px;
+  border: 1px solid var(--sage-deep);
+  border-radius: var(--r-md);
+  background: #fff;
+}
+
+.faq-card p {
+  margin-top: 8px;
+  padding-left: 1.9125em;
+}
+
+@media (max-width: 720px) {
+  .faq-grid {
+    grid-template-columns: minmax(0, 1fr);
+  }
+  .faq-card {
+    padding: 18px 18px;
+  }
+}
+
 @media (forced-colors: active) {
   .seg-row input:checked + span,
   .side-nav a[aria-current],
