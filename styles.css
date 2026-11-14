@@ -392,6 +392,11 @@ html:not(.js) .js-only {
   font-variant-numeric: tabular-nums;
 }
 
+.hours-note {
+  display: block;
+  font-size: 0.9375em;
+}
+
 /* ───── 맨 위 띠와 머리글 ───── */
 
 .topbar {
@@ -742,7 +747,7 @@ html:not(.js) .js-only {
   right: 0;
   top: 0;
   z-index: 1;
-  width: min(78%, 372px);
+  width: min(72%, 350px);
   aspect-ratio: 3 / 4;
   overflow: hidden;
   border: 6px solid rgba(255, 255, 255, 0.92);
@@ -758,27 +763,15 @@ html:not(.js) .js-only {
   object-position: 50% 60%;
 }
 
-.balloon {
+/* 병원 로고(글자는 흰색). 짙은 바탕 위에 바로 놓는다 */
+.hero-logo {
   position: absolute;
-  left: 2%;
-  top: 30px;
+  left: 0;
+  top: 56px;
   z-index: 2;
-  width: min(26%, 120px);
-}
-
-@media (prefers-reduced-motion: no-preference) {
-  .balloon {
-    animation: float 2.5s ease-in-out 2;
-  }
-  @keyframes float {
-    0%,
-    100% {
-      transform: translateY(0) rotate(-1.2deg);
-    }
-    50% {
-      transform: translateY(-14px) rotate(1.2deg);
-    }
-  }
+  width: min(25%, 122px);
+  height: auto;
+  filter: drop-shadow(0 6px 14px rgba(0, 0, 0, 0.35));
 }
 
 .today {
@@ -869,12 +862,19 @@ html:not(.js) .js-only {
     border-width: 5px;
     border-radius: var(--r-lg);
   }
-  .balloon {
+  /* 좁은 화면에서는 사진 아래쪽을 어둡게 깔고 그 위에 로고를 올린다 */
+  .hero-photo::after {
+    content: "";
+    position: absolute;
+    inset: 35% 0 0;
+    background: linear-gradient(to bottom, rgba(15, 38, 51, 0), rgba(15, 38, 51, 0.88));
+  }
+  .hero-logo {
     left: auto;
-    right: 4%;
+    right: 18px;
     top: auto;
-    bottom: 34%;
-    width: 84px;
+    bottom: 16px;
+    width: 112px;
   }
   .today {
     position: relative;
@@ -1070,8 +1070,16 @@ html:not(.js) .js-only {
 
 .clinic-cards {
   display: grid;
-  grid-template-columns: repeat(5, minmax(0, 1fr));
+  grid-template-columns: repeat(12, minmax(0, 1fr));
   gap: 14px;
+}
+
+.clinic-cards li {
+  grid-column: span 3;
+}
+
+.clinic-cards li:nth-child(n + 5) {
+  grid-column: span 4;
 }
 
 .clinic-card {
@@ -1846,6 +1854,14 @@ html:not(.js) .js-only {
 
 .clinic-row h3 {
   font-size: clamp(1.1875rem, 2.2vw, 1.4375rem);
+}
+
+.row-sub {
+  display: inline-block;
+  margin-left: 6px;
+  color: var(--ink-2);
+  font-size: 1rem;
+  font-weight: 600;
 }
 
 .clinic-row p {
@@ -2881,6 +2897,10 @@ tbody th {
 
 .hours-grid .hours > div {
   padding: 15px 0;
+}
+
+.hours-grid .hours-note {
+  display: inline;
 }
 
 .car-steps {
