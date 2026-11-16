@@ -4004,3 +4004,96 @@ tbody th {
     font-size: 11pt;
   }
 }
+
+/* ───── 한눈에 보기 (페이지 머리의 요약) ───── */
+
+.keyfacts {
+  max-width: 46em;
+  margin-top: 22px;
+  padding: 18px 22px 16px;
+  background: #fff;
+  border: 1px solid var(--line-2);
+  border-left: 4px solid var(--mint-deep);
+  border-radius: var(--r-md);
+}
+
+.keyfacts-title {
+  font-family: var(--font-body);
+  font-size: 0.9375rem;
+  font-weight: 800;
+  letter-spacing: 0;
+  color: var(--mint-ink);
+}
+
+.keyfacts ul {
+  display: grid;
+  gap: 8px;
+  margin-top: 10px;
+}
+
+.keyfacts li {
+  position: relative;
+  padding-left: 16px;
+  line-height: 1.6;
+}
+
+.keyfacts li::before {
+  content: "";
+  position: absolute;
+  left: 0;
+  top: 0.68em;
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  background: var(--mint-deep);
+}
+
+.updated {
+  color: var(--ink-2);
+  font-size: 0.875rem;
+}
+
+.keyfacts .updated {
+  margin-top: 12px;
+}
+
+.page-sim .keyfacts {
+  background: rgba(255, 255, 255, 0.08);
+  border-color: rgba(255, 255, 255, 0.22);
+  border-left-color: var(--mint);
+  color: var(--on-dark);
+}
+
+.page-sim .keyfacts-title {
+  color: #fff;
+}
+
+.page-sim .keyfacts li::before {
+  background: var(--mint);
+}
+
+.page-sim .keyfacts .updated,
+.site-footer .updated {
+  color: inherit;
+}
+
+/* 병원 개요 표 */
+.table-facts tbody th {
+  width: 8.5em;
+  background: var(--sand-soft);
+}
+
+.table-facts td {
+  overflow-wrap: anywhere;
+}
+
+@media (max-width: 560px) {
+  .keyfacts {
+    padding: 16px 16px 14px;
+  }
+
+  .table-facts tbody th {
+    width: 6em;
+    white-space: normal;
+  }
+}

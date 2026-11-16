@@ -10,6 +10,7 @@ User-agent: Yeti
 User-agent: Daumoa
 User-agent: bingbot
 User-agent: Applebot
+User-agent: DuckDuckBot
 Allow: /
 
 # ChatGPT 검색·답변
@@ -31,7 +32,18 @@ Allow: /
 
 # Gemini·Apple AI
 User-agent: Google-Extended
+User-agent: GoogleOther
 User-agent: Applebot-Extended
+Allow: /
+
+# 그 밖의 AI 검색·답변
+User-agent: meta-externalagent
+User-agent: Amazonbot
+User-agent: DuckAssistBot
+User-agent: MistralAI-User
+User-agent: cohere-ai
+User-agent: YouBot
+User-agent: CCBot
 Allow: /
 
 Sitemap: https://lke081384-maker.github.io/songdo-kids-pediatrics/sitemap.xml

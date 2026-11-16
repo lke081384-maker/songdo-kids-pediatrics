@@ -21,7 +21,9 @@
 <meta name="twitter:title" content="우리 아이 키 예측 계산기">
 <meta name="twitter:description" content="부모의 키로 유전적 예측 키를 계산하고, 아이의 지금 키를 한국 소아청소년 성장도표와 비교합니다. 만 3~17세 성장 곡선 그래프를 볼 수 있습니다.">
 <meta name="twitter:image" content="https://lke081384-maker.github.io/songdo-kids-pediatrics/assets/og.jpg">
+<meta name="author" content="송도키즈 소아청소년과의원">
 <link rel="canonical" href="https://lke081384-maker.github.io/songdo-kids-pediatrics/growth-calculator/">
+<link rel="alternate" type="text/plain" href="https://lke081384-maker.github.io/songdo-kids-pediatrics/llms.txt" title="송도키즈 소아청소년과의원 정보 요약 (llms.txt)">
 <link rel="icon" type="image/png" href="../assets/favicon.png">
 <link rel="apple-touch-icon" href="../assets/apple-touch-icon.png">
 <link rel="preconnect" href="https://cdn.jsdelivr.net" crossorigin>
@@ -80,8 +82,48 @@
    "about": {
     "@id": "https://lke081384-maker.github.io/songdo-kids-pediatrics/#clinic"
    },
+   "author": {
+    "@id": "https://lke081384-maker.github.io/songdo-kids-pediatrics/#clinic"
+   },
+   "publisher": {
+    "@id": "https://lke081384-maker.github.io/songdo-kids-pediatrics/#clinic"
+   },
    "primaryImageOfPage": "https://lke081384-maker.github.io/songdo-kids-pediatrics/assets/og.jpg",
-   "dateModified": "2026-11-14"
+   "abstract": "송도키즈 소아청소년과의원이 만든 키 예측 계산기입니다. 누구나 무료로 쓸 수 있고, 넣은 값은 저장하거나 보내지 않습니다. 유전적 예측 키는 부모 키의 평균에 남자아이는 6.5cm를 더하고, 여자아이는 6.5cm를 빼서 계산합니다. 아이의 지금 키는 질병관리청·대한소아청소년과학회 「2017 소아청소년 성장도표」와 비교합니다(만 3~17세). 참고용 계산이며, 정확한 예측은 진료와 골연령 검사로 확인합니다.",
+   "dateModified": "2026-11-16",
+   "mainEntity": {
+    "@type": "WebApplication",
+    "@id": "https://lke081384-maker.github.io/songdo-kids-pediatrics/growth-calculator/#app",
+    "name": "우리 아이 키 예측 계산기",
+    "url": "https://lke081384-maker.github.io/songdo-kids-pediatrics/growth-calculator/",
+    "applicationCategory": "HealthApplication",
+    "operatingSystem": "웹 브라우저",
+    "inLanguage": "ko",
+    "isAccessibleForFree": true,
+    "offers": {
+     "@type": "Offer",
+     "price": 0,
+     "priceCurrency": "KRW"
+    },
+    "description": "부모의 키로 유전적 예측 키를 계산하고, 아이의 지금 키를 한국 소아청소년 성장도표와 비교합니다. 만 3~17세 성장 곡선 그래프를 볼 수 있습니다.",
+    "provider": {
+     "@id": "https://lke081384-maker.github.io/songdo-kids-pediatrics/#clinic"
+    },
+    "isBasedOn": {
+     "@type": "CreativeWork",
+     "name": "2017 소아청소년 성장도표",
+     "publisher": [
+      {
+       "@type": "Organization",
+       "name": "질병관리청"
+      },
+      {
+       "@type": "Organization",
+       "name": "대한소아청소년과학회"
+      }
+     ]
+    }
+   }
   },
   {
    "@type": "BreadcrumbList",
@@ -135,6 +177,11 @@
     <nav class="crumbs" aria-label="현재 위치"><ol><li><a href="../">홈</a></li><li><span aria-current="page">키 예측</span></li></ol></nav>
     <h1>우리 아이 키, 얼마나 클까요?</h1>
     <p class="page-lead">부모의 키로 유전적 예측 키를 계산하고, 아이의 지금 키를 한국 소아청소년 성장도표와 비교합니다. 숫자를 바꾸면 결과가 바로 바뀝니다.</p>
+    <section class="keyfacts" aria-labelledby="keyfacts-title">
+      <h2 class="keyfacts-title" id="keyfacts-title">한눈에 보기</h2>
+      <ul><li>송도키즈 소아청소년과의원이 만든 키 예측 계산기입니다. 누구나 무료로 쓸 수 있고, 넣은 값은 저장하거나 보내지 않습니다.</li><li>유전적 예측 키는 부모 키의 평균에 남자아이는 6.5cm를 더하고, 여자아이는 6.5cm를 빼서 계산합니다.</li><li>아이의 지금 키는 질병관리청·대한소아청소년과학회 「2017 소아청소년 성장도표」와 비교합니다(만 3~17세).</li><li>참고용 계산이며, 정확한 예측은 진료와 골연령 검사로 확인합니다.</li></ul>
+      <p class="updated">마지막 수정 <time datetime="2026-11-16">2026년 11월 16일</time></p>
+    </section>
   </div>
 </div>
 <section class="sim" id="growth-sim" aria-labelledby="sim-form-title">
@@ -219,7 +266,7 @@
                 <span class="k k-gene">유전적 예측 키</span>
               </figcaption>
             </figure>
-            <p class="sim-source">기준: 질병관리청·대한소아청소년과학회 「2017 소아청소년 성장도표」 연령별 신장</p>
+            <p class="sim-source">기준: 질병관리청·대한소아청소년과학회 「2017 소아청소년 성장도표」 연령별 신장 (<a href="https://knhanes.kdca.go.kr/knhanes/grtcht/dwnld/dtLst.do" target="_blank" rel="noopener">질병관리청 성장도표 자료<span class="sr-only">(새 창)</span></a>)</p>
           </div>
         </div>
 
@@ -256,6 +303,7 @@
   </div>
   <div class="wrap footer-base">
     <p>이 사이트의 내용은 일반적인 안내입니다. 진단과 치료는 진찰한 뒤에 결정합니다.</p>
+    
     <p><a href="https://lke081384-maker.github.io/songdo-kids-clinic/" target="_blank" rel="noopener">부설 송도키즈 학습심리발달클리닉<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M14 4h6v6M20 4l-9 9M18 14v5a1 1 0 0 1-1 1H5a1 1 0 0 1-1-1V7a1 1 0 0 1 1-1h5"/></svg><span class="sr-only">(새 창)</span></a></p>
   </div>
 </footer>

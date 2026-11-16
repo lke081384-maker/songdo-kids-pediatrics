@@ -21,7 +21,9 @@
 <meta name="twitter:title" content="자주 묻는 질문">
 <meta name="twitter:description" content="인천 송도 송도키즈 소아청소년과의원에 자주 묻는 질문과 답. 진료 시간, 토요일 진료, 주차, 영유아 건강검진 시기, 예방접종, 성장판 검사, 소아 시력 검사, 아토피, 비급여 진료비와 서류 발급.">
 <meta name="twitter:image" content="https://lke081384-maker.github.io/songdo-kids-pediatrics/assets/og.jpg">
+<meta name="author" content="송도키즈 소아청소년과의원">
 <link rel="canonical" href="https://lke081384-maker.github.io/songdo-kids-pediatrics/faq/">
+<link rel="alternate" type="text/plain" href="https://lke081384-maker.github.io/songdo-kids-pediatrics/llms.txt" title="송도키즈 소아청소년과의원 정보 요약 (llms.txt)">
 <link rel="icon" type="image/png" href="../assets/favicon.png">
 <link rel="apple-touch-icon" href="../assets/apple-touch-icon.png">
 <link rel="preconnect" href="https://cdn.jsdelivr.net" crossorigin>
@@ -61,6 +63,27 @@
     "@type": "AdministrativeArea",
     "name": "인천광역시 연수구"
    },
+   "knowsAbout": [
+    "소아청소년과 진료",
+    "영유아 건강검진",
+    "예방접종",
+    "아토피·알레르기 진료",
+    "키 성장 검사(골연령 측정)",
+    "소아 시력 검사",
+    "성인 진료"
+   ],
+   "contactPoint": {
+    "@type": "ContactPoint",
+    "telephone": "+82-507-1347-8115",
+    "contactType": "진료 문의",
+    "areaServed": "KR",
+    "availableLanguage": "ko"
+   },
+   "openingHours": [
+    "Mo-Fr 08:30-13:00",
+    "Mo-Fr 14:00-18:30",
+    "Sa 09:00-13:30"
+   ],
    "openingHoursSpecification": [
     {
      "@type": "OpeningHoursSpecification",
@@ -103,28 +126,43 @@
    "availableService": [
     {
      "@type": "MedicalTest",
+     "@id": "https://lke081384-maker.github.io/songdo-kids-pediatrics/clinics/checkup/#service",
      "name": "영유아 건강검진",
-     "url": "https://lke081384-maker.github.io/songdo-kids-pediatrics/clinics/checkup/"
+     "description": "생후 4개월부터 71개월(6세)까지 일곱 차례 받는 건강검진. 문진과 진찰, 신체 계측, 발달 평가와 상담, 건강 교육으로 이루어지며 본인 부담이 없다. 생후 14~35일 신생아 검진도 하며, 합치면 모두 여덟 차례다.",
+     "url": "https://lke081384-maker.github.io/songdo-kids-pediatrics/clinics/checkup/",
+     "relevantSpecialty": "https://schema.org/Pediatric"
     },
     {
      "@type": "MedicalProcedure",
+     "@id": "https://lke081384-maker.github.io/songdo-kids-pediatrics/clinics/vaccination/#service",
      "name": "예방접종",
-     "url": "https://lke081384-maker.github.io/songdo-kids-pediatrics/clinics/vaccination/"
+     "description": "신생아부터 소아, 성인까지 필요한 예방접종.",
+     "url": "https://lke081384-maker.github.io/songdo-kids-pediatrics/clinics/vaccination/",
+     "relevantSpecialty": "https://schema.org/Pediatric"
     },
     {
      "@type": "MedicalTherapy",
+     "@id": "https://lke081384-maker.github.io/songdo-kids-pediatrics/clinics/atopy/#service",
      "name": "아토피·알레르기 진료",
-     "url": "https://lke081384-maker.github.io/songdo-kids-pediatrics/clinics/atopy/"
+     "description": "아토피 피부염과 알레르기 비염 진료. 레이저와 LED 광치료기, 초음파 장비를 함께 쓴다.",
+     "url": "https://lke081384-maker.github.io/songdo-kids-pediatrics/clinics/atopy/",
+     "relevantSpecialty": "https://schema.org/Pediatric"
     },
     {
      "@type": "MedicalTest",
+     "@id": "https://lke081384-maker.github.io/songdo-kids-pediatrics/clinics/growth/#service",
      "name": "키 성장 검사(골연령 측정)",
-     "url": "https://lke081384-maker.github.io/songdo-kids-pediatrics/clinics/growth/"
+     "description": "문진, 신체 계측, 유전적 예측 키 계산, 골연령 측정, 예측 키 계산, 혈액·소변 검사의 여섯 단계로 성장 상태를 확인한다. 골연령은 왼손과 손목을 저선량 X-ray로 촬영해 본다.",
+     "url": "https://lke081384-maker.github.io/songdo-kids-pediatrics/clinics/growth/",
+     "relevantSpecialty": "https://schema.org/Pediatric"
     },
     {
      "@type": "MedicalTest",
+     "@id": "https://lke081384-maker.github.io/songdo-kids-pediatrics/clinics/vision/#service",
      "name": "소아 시력 검사",
-     "url": "https://lke081384-maker.github.io/songdo-kids-pediatrics/clinics/vision/"
+     "description": "시력검사표를 읽지 못하는 아이도 받을 수 있는 굴절검사. 생후 6개월부터, 사시·근시·원시·난시 등 일곱 가지를 1분 안에 검사한다.",
+     "url": "https://lke081384-maker.github.io/songdo-kids-pediatrics/clinics/vision/",
+     "relevantSpecialty": "https://schema.org/Pediatric"
     }
    ],
    "employee": {
@@ -142,6 +180,17 @@
    "name": "황선태",
    "jobTitle": "원장, 소아청소년과 전문의",
    "description": "소아청소년과 전문의, 소아청소년과 의학 석사, 삼성서울병원 아토피센터 연수",
+   "url": "https://lke081384-maker.github.io/songdo-kids-pediatrics/about/",
+   "knowsAbout": [
+    "소아청소년과",
+    "아토피 피부염",
+    "알레르기 비염"
+   ],
+   "hasCredential": {
+    "@type": "EducationalOccupationalCredential",
+    "name": "소아청소년과 전문의",
+    "credentialCategory": "전문의 자격"
+   },
    "worksFor": {
     "@id": "https://lke081384-maker.github.io/songdo-kids-pediatrics/#clinic"
    },
@@ -187,8 +236,18 @@
    "about": {
     "@id": "https://lke081384-maker.github.io/songdo-kids-pediatrics/#clinic"
    },
+   "author": {
+    "@id": "https://lke081384-maker.github.io/songdo-kids-pediatrics/#clinic"
+   },
+   "publisher": {
+    "@id": "https://lke081384-maker.github.io/songdo-kids-pediatrics/#clinic"
+   },
    "primaryImageOfPage": "https://lke081384-maker.github.io/songdo-kids-pediatrics/assets/og.jpg",
-   "dateModified": "2026-11-14"
+   "abstract": "송도키즈 소아청소년과의원(인천 송도)에 보호자분들이 자주 묻는 질문 40개와 답을 모았습니다. 평일은 오전 8시 30분부터 오후 6시 30분까지(점심시간 오후 1~2시), 토요일은 오전 9시부터 오후 1시 30분까지 점심시간 없이 진료하고, 일요일과 공휴일은 쉽니다. 주소는 인천광역시 연수구 송도문화로28번길 28 글로벌캠퍼스푸르지오 204동 상가 2층 201호, 전화번호는 0507-1347-8115입니다.",
+   "dateModified": "2026-11-16",
+   "mainEntity": {
+    "@id": "https://lke081384-maker.github.io/songdo-kids-pediatrics/faq/#faq"
+   }
   },
   {
    "@type": "FAQPage",
@@ -223,6 +282,22 @@
     },
     {
      "@type": "Question",
+     "name": "평일 저녁에는 몇 시까지 진료하나요?",
+     "acceptedAnswer": {
+      "@type": "Answer",
+      "text": "평일은 오후 6시 30분까지 진료합니다. 아침에는 오전 8시 30분부터 진료를 시작합니다."
+     }
+    },
+    {
+     "@type": "Question",
+     "name": "점심시간은 언제인가요?",
+     "acceptedAnswer": {
+      "@type": "Answer",
+      "text": "평일 점심시간은 오후 1시부터 2시까지입니다. 토요일은 점심시간 없이 오전 9시부터 오후 1시 30분까지 진료합니다."
+     }
+    },
+    {
+     "@type": "Question",
      "name": "송도키즈 소아청소년과의원은 어디에 있나요?",
      "acceptedAnswer": {
       "@type": "Answer",
@@ -243,6 +318,22 @@
      "acceptedAnswer": {
       "@type": "Answer",
       "text": "인천 1호선 테크노파크역이 가깝습니다. 병원은 글로벌캠퍼스푸르지오 204동 상가 2층에 있습니다."
+     }
+    },
+    {
+     "@type": "Question",
+     "name": "주차장에서 병원까지는 어떻게 가나요?",
+     "acceptedAnswer": {
+      "@type": "Answer",
+      "text": "지하 상가 주차장에서 화살표 방향으로 직진한 뒤 벽에 붙은 안내 벽보를 따라 70m쯤 걸어오면 됩니다. ‘Mall 204A’ 출입문으로 들어와 엘리베이터로 2층에 올라온 다음, 바로 옆 삼거리에서 오른쪽 복도 끝까지 오면 병원입니다."
+     }
+    },
+    {
+     "@type": "Question",
+     "name": "전화번호가 어떻게 되나요?",
+     "acceptedAnswer": {
+      "@type": "Answer",
+      "text": "송도키즈 소아청소년과의원 전화번호는 0507-1347-8115입니다. 진료 시간 안에 전화 주시면 안내해 드립니다."
      }
     },
     {
@@ -295,6 +386,14 @@
     },
     {
      "@type": "Question",
+     "name": "영유아 건강검진은 모두 몇 번 받나요?",
+     "acceptedAnswer": {
+      "@type": "Answer",
+      "text": "생후 14~35일의 1차 검진부터 생후 66~71개월의 8차 검진까지 모두 여덟 차례입니다(국민건강보험공단 기준). 송도키즈 소아청소년과의원에서는 신생아 검진(1차)부터 받을 수 있습니다."
+     }
+    },
+    {
+     "@type": "Question",
      "name": "영유아 건강검진 비용은 얼마인가요?",
      "acceptedAnswer": {
       "@type": "Answer",
@@ -315,6 +414,22 @@
      "acceptedAnswer": {
       "@type": "Answer",
       "text": "시력검사는 30개월 검진부터 합니다. 구강검진은 치과에서 따로 받습니다."
+     }
+    },
+    {
+     "@type": "Question",
+     "name": "영유아 건강검진에서는 무엇을 하나요?",
+     "acceptedAnswer": {
+      "@type": "Answer",
+      "text": "문진과 진찰, 신체 계측, 발달 평가와 상담, 건강 교육을 합니다. 발달선별검사는 9개월 검진부터, 시력검사는 30개월 검진부터 들어갑니다."
+     }
+    },
+    {
+     "@type": "Question",
+     "name": "발달선별검사는 어떤 검사인가요?",
+     "acceptedAnswer": {
+      "@type": "Answer",
+      "text": "아이의 발달이 또래와 비슷한지 살펴보는 검사입니다. 영유아 건강검진에서는 생후 9~12개월 검진부터 합니다."
      }
     },
     {
@@ -343,10 +458,34 @@
     },
     {
      "@type": "Question",
+     "name": "어른도 예방접종을 받을 수 있나요?",
+     "acceptedAnswer": {
+      "@type": "Answer",
+      "text": "네, 성인 예방접종도 합니다. 맞으려는 백신이 있는지는 오기 전에 전화(0507-1347-8115)로 확인해 주세요."
+     }
+    },
+    {
+     "@type": "Question",
      "name": "성장판 검사(골연령 측정)는 어떻게 하나요?",
      "acceptedAnswer": {
       "@type": "Answer",
       "text": "왼손과 손목을 X선으로 촬영해 뼈의 성숙도(골연령)를 봅니다. 저선량 X-ray로 촬영하고 AI 골연령 판독 프로그램을 함께 씁니다."
+     }
+    },
+    {
+     "@type": "Question",
+     "name": "키 성장 검사는 어떤 순서로 하나요?",
+     "acceptedAnswer": {
+      "@type": "Answer",
+      "text": "문진, 신체 계측, 유전적 예측 키 계산, 골연령 측정, 예측 키 계산, 혈액·소변 검사의 여섯 단계로 합니다. 실제 나이와 골연령, 지금 키, 부모의 키를 종합해 앞으로의 키를 예측합니다."
+     }
+    },
+    {
+     "@type": "Question",
+     "name": "유전적 예측 키는 어떻게 계산하나요?",
+     "acceptedAnswer": {
+      "@type": "Answer",
+      "text": "부모 키의 평균에 남자아이는 6.5cm를 더하고, 여자아이는 6.5cm를 뺍니다. 부모에게서 물려받은 요인만 반영한 참고용 계산이라 실제 키는 골연령과 영양·수면·운동에 따라 달라집니다."
      }
     },
     {
@@ -491,6 +630,11 @@
     <nav class="crumbs" aria-label="현재 위치"><ol><li><a href="../">홈</a></li><li><span aria-current="page">자주 묻는 질문</span></li></ol></nav>
     <h1>자주 묻는 질문</h1>
     <p class="page-lead">진료 시간과 주차부터 영유아 건강검진, 예방접종, 성장판 검사까지 보호자분들이 자주 묻는 내용을 모았습니다.</p>
+    <section class="keyfacts" aria-labelledby="keyfacts-title">
+      <h2 class="keyfacts-title" id="keyfacts-title">한눈에 보기</h2>
+      <ul><li>송도키즈 소아청소년과의원(인천 송도)에 보호자분들이 자주 묻는 질문 40개와 답을 모았습니다.</li><li>평일은 오전 8시 30분부터 오후 6시 30분까지(점심시간 오후 1~2시), 토요일은 오전 9시부터 오후 1시 30분까지 점심시간 없이 진료하고, 일요일과 공휴일은 쉽니다.</li><li>주소는 인천광역시 연수구 송도문화로28번길 28 글로벌캠퍼스푸르지오 204동 상가 2층 201호, 전화번호는 0507-1347-8115입니다.</li></ul>
+      <p class="updated">마지막 수정 <time datetime="2026-11-16">2026년 11월 16일</time></p>
+    </section>
   </div>
 </div>
 <div class="wrap with-side">
@@ -504,6 +648,10 @@
 <p class="faq-a">네, 토요일은 오전 9시부터 오후 1시 30분까지 진료합니다.</p>
 <h3 class="faq-q">일요일이나 공휴일에도 문을 여나요?</h3>
 <p class="faq-a">일요일과 공휴일은 휴진입니다. 임시 휴진은 전화(<a href="tel:050713478115">0507-1347-8115</a>)로 확인해 주세요.</p>
+<h3 class="faq-q">평일 저녁에는 몇 시까지 진료하나요?</h3>
+<p class="faq-a">평일은 오후 6시 30분까지 진료합니다. 아침에는 오전 8시 30분부터 진료를 시작합니다.</p>
+<h3 class="faq-q">점심시간은 언제인가요?</h3>
+<p class="faq-a">평일 점심시간은 오후 1시부터 2시까지입니다. 토요일은 점심시간 없이 오전 9시부터 오후 1시 30분까지 진료합니다.</p>
 <h2 id="faq-location">위치와 주차</h2>
 <h3 class="faq-q">송도키즈 소아청소년과의원은 어디에 있나요?</h3>
 <p class="faq-a">인천광역시 연수구 송도문화로28번길 28 글로벌캠퍼스푸르지오 204동 상가 2층 201호에 있습니다. 인천 1호선 테크노파크역이 가깝습니다. 주차장에서 병원까지 가는 길은 <a href="../location/">오시는 길</a>에 사진으로 안내해 두었습니다.</p>
@@ -511,6 +659,10 @@
 <p class="faq-a">상가 지하 주차장을 3시간 무료로 쓸 수 있습니다. Gate A로 들어와 오른쪽 지하 ‘상가 주차장’으로 내려오고, 차단기 앞에서 호출 버튼을 눌러 “송도키즈 소아청소년과 왔습니다”라고 말씀해 주세요.</p>
 <h3 class="faq-q">지하철로 갈 수 있나요?</h3>
 <p class="faq-a">인천 1호선 테크노파크역이 가깝습니다. 병원은 글로벌캠퍼스푸르지오 204동 상가 2층에 있습니다.</p>
+<h3 class="faq-q">주차장에서 병원까지는 어떻게 가나요?</h3>
+<p class="faq-a">지하 상가 주차장에서 화살표 방향으로 직진한 뒤 벽에 붙은 안내 벽보를 따라 70m쯤 걸어오면 됩니다. ‘Mall 204A’ 출입문으로 들어와 엘리베이터로 2층에 올라온 다음, 바로 옆 삼거리에서 오른쪽 복도 끝까지 오면 병원입니다.</p>
+<h3 class="faq-q">전화번호가 어떻게 되나요?</h3>
+<p class="faq-a">송도키즈 소아청소년과의원 전화번호는 <a href="tel:050713478115">0507-1347-8115</a>입니다. 진료 시간 안에 전화 주시면 안내해 드립니다.</p>
 <h2 id="faq-care">진료 전반</h2>
 <h3 class="faq-q">어떤 진료를 하나요?</h3>
 <p class="faq-a">소아청소년과 진료와 함께 아토피·알레르기, 키 성장, 소아 시력 검사, 영유아 건강검진, 예방접종을 따로 챙겨 봅니다. 자세한 내용은 <a href="../clinics/">진료 안내</a>에서 볼 수 있습니다.</p>
@@ -525,12 +677,18 @@
 <h2 id="faq-checkup">영유아 건강검진</h2>
 <h3 class="faq-q">영유아 건강검진은 언제 받나요?</h3>
 <p class="faq-a">생후 4개월부터 71개월(6세)까지 모두 일곱 차례 받습니다. 검진 기간은 생후 4~6개월, 9~12개월, 18~24개월, 30~36개월, 42~48개월, 54~60개월, 66~71개월입니다. <a href="../clinics/checkup/#checkup-calc">검진 시기 계산</a>에 생년월일을 넣으면 차수별 기간을 날짜로 볼 수 있습니다.</p>
+<h3 class="faq-q">영유아 건강검진은 모두 몇 번 받나요?</h3>
+<p class="faq-a">생후 14~35일의 1차 검진부터 생후 66~71개월의 8차 검진까지 모두 여덟 차례입니다(국민건강보험공단 기준). 송도키즈 소아청소년과의원에서는 신생아 검진(1차)부터 받을 수 있습니다.</p>
 <h3 class="faq-q">영유아 건강검진 비용은 얼마인가요?</h3>
 <p class="faq-a">영유아 건강검진은 본인 부담 없이 받습니다.</p>
 <h3 class="faq-q">신생아 검진도 하나요?</h3>
 <p class="faq-a">네, 생후 14~35일 신생아 검진도 합니다.</p>
 <h3 class="faq-q">영유아 건강검진에서 시력검사와 구강검진도 하나요?</h3>
 <p class="faq-a">시력검사는 30개월 검진부터 합니다. 구강검진은 치과에서 따로 받습니다.</p>
+<h3 class="faq-q">영유아 건강검진에서는 무엇을 하나요?</h3>
+<p class="faq-a">문진과 진찰, 신체 계측, 발달 평가와 상담, 건강 교육을 합니다. 발달선별검사는 9개월 검진부터, 시력검사는 30개월 검진부터 들어갑니다.</p>
+<h3 class="faq-q">발달선별검사는 어떤 검사인가요?</h3>
+<p class="faq-a">아이의 발달이 또래와 비슷한지 살펴보는 검사입니다. 영유아 건강검진에서는 생후 9~12개월 검진부터 합니다.</p>
 <h2 id="faq-vaccination">예방접종</h2>
 <h3 class="faq-q">어떤 예방접종을 할 수 있나요?</h3>
 <p class="faq-a">신생아부터 소아, 성인까지 필요한 예방접종을 합니다. 나이별 표준 접종 일정은 질병관리청 예방접종도우미에서 확인할 수 있고, 아이에게 맞는 일정은 진료실에서 함께 정합니다.</p>
@@ -538,9 +696,15 @@
 <p class="faq-a">건강보험이 적용되지 않는 접종의 비용은 <a href="../fees/#fees-vaccine">비급여 진료비 안내</a>에 정리했습니다. 금액은 바뀔 수 있으니 정확한 비용은 병원에 문의해 주세요.</p>
 <h3 class="faq-q">접종하고 집에 돌아와서는 무엇을 챙겨야 하나요?</h3>
 <p class="faq-a">접종 부위가 아프거나 부으면 찬 물수건을 대 주고, 열이 나면 미지근한 수건으로 몸을 닦아 줍니다. 물을 충분히 마시게 하고, 다음 접종일을 달력에 적어 두세요.</p>
+<h3 class="faq-q">어른도 예방접종을 받을 수 있나요?</h3>
+<p class="faq-a">네, 성인 예방접종도 합니다. 맞으려는 백신이 있는지는 오기 전에 전화(<a href="tel:050713478115">0507-1347-8115</a>)로 확인해 주세요.</p>
 <h2 id="faq-growth">키 성장</h2>
 <h3 class="faq-q">성장판 검사(골연령 측정)는 어떻게 하나요?</h3>
 <p class="faq-a">왼손과 손목을 X선으로 촬영해 뼈의 성숙도(골연령)를 봅니다. 저선량 X-ray로 촬영하고 AI 골연령 판독 프로그램을 함께 씁니다.</p>
+<h3 class="faq-q">키 성장 검사는 어떤 순서로 하나요?</h3>
+<p class="faq-a">문진, 신체 계측, 유전적 예측 키 계산, 골연령 측정, 예측 키 계산, 혈액·소변 검사의 여섯 단계로 합니다. 실제 나이와 골연령, 지금 키, 부모의 키를 종합해 앞으로의 키를 예측합니다.</p>
+<h3 class="faq-q">유전적 예측 키는 어떻게 계산하나요?</h3>
+<p class="faq-a">부모 키의 평균에 남자아이는 6.5cm를 더하고, 여자아이는 6.5cm를 뺍니다. 부모에게서 물려받은 요인만 반영한 참고용 계산이라 실제 키는 골연령과 영양·수면·운동에 따라 달라집니다.</p>
 <h3 class="faq-q">성장판은 보통 몇 살에 닫히나요?</h3>
 <p class="faq-a">다리의 성장판은 보통 남자아이 만 16세, 여자아이 만 14세에 닫히고, 그 뒤에는 다리 길이가 더 자라지 않습니다.</p>
 <h3 class="faq-q">아이의 예상 키를 미리 계산해 볼 수 있나요?</h3>
@@ -608,6 +772,7 @@
   </div>
   <div class="wrap footer-base">
     <p>이 사이트의 내용은 일반적인 안내입니다. 진단과 치료는 진찰한 뒤에 결정합니다.</p>
+    
     <p><a href="https://lke081384-maker.github.io/songdo-kids-clinic/" target="_blank" rel="noopener">부설 송도키즈 학습심리발달클리닉<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M14 4h6v6M20 4l-9 9M18 14v5a1 1 0 0 1-1 1H5a1 1 0 0 1-1-1V7a1 1 0 0 1 1-1h5"/></svg><span class="sr-only">(새 창)</span></a></p>
   </div>
 </footer>

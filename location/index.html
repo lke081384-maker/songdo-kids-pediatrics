@@ -21,7 +21,9 @@
 <meta name="twitter:title" content="오시는 길·진료 시간·주차">
 <meta name="twitter:description" content="인천 연수구 송도문화로28번길 28 글로벌캠퍼스푸르지오 204동 상가 2층 201호. 평일 오전 8:30~오후 6:30, 토요일 오전 9:00~오후 1:30. 상가 지하 주차장 3시간 무료, 테크노파크역 가까움.">
 <meta name="twitter:image" content="https://lke081384-maker.github.io/songdo-kids-pediatrics/assets/og.jpg">
+<meta name="author" content="송도키즈 소아청소년과의원">
 <link rel="canonical" href="https://lke081384-maker.github.io/songdo-kids-pediatrics/location/">
+<link rel="alternate" type="text/plain" href="https://lke081384-maker.github.io/songdo-kids-pediatrics/llms.txt" title="송도키즈 소아청소년과의원 정보 요약 (llms.txt)">
 <link rel="icon" type="image/png" href="../assets/favicon.png">
 <link rel="apple-touch-icon" href="../assets/apple-touch-icon.png">
 <link rel="preconnect" href="https://cdn.jsdelivr.net" crossorigin>
@@ -61,6 +63,27 @@
     "@type": "AdministrativeArea",
     "name": "인천광역시 연수구"
    },
+   "knowsAbout": [
+    "소아청소년과 진료",
+    "영유아 건강검진",
+    "예방접종",
+    "아토피·알레르기 진료",
+    "키 성장 검사(골연령 측정)",
+    "소아 시력 검사",
+    "성인 진료"
+   ],
+   "contactPoint": {
+    "@type": "ContactPoint",
+    "telephone": "+82-507-1347-8115",
+    "contactType": "진료 문의",
+    "areaServed": "KR",
+    "availableLanguage": "ko"
+   },
+   "openingHours": [
+    "Mo-Fr 08:30-13:00",
+    "Mo-Fr 14:00-18:30",
+    "Sa 09:00-13:30"
+   ],
    "openingHoursSpecification": [
     {
      "@type": "OpeningHoursSpecification",
@@ -103,28 +126,43 @@
    "availableService": [
     {
      "@type": "MedicalTest",
+     "@id": "https://lke081384-maker.github.io/songdo-kids-pediatrics/clinics/checkup/#service",
      "name": "영유아 건강검진",
-     "url": "https://lke081384-maker.github.io/songdo-kids-pediatrics/clinics/checkup/"
+     "description": "생후 4개월부터 71개월(6세)까지 일곱 차례 받는 건강검진. 문진과 진찰, 신체 계측, 발달 평가와 상담, 건강 교육으로 이루어지며 본인 부담이 없다. 생후 14~35일 신생아 검진도 하며, 합치면 모두 여덟 차례다.",
+     "url": "https://lke081384-maker.github.io/songdo-kids-pediatrics/clinics/checkup/",
+     "relevantSpecialty": "https://schema.org/Pediatric"
     },
     {
      "@type": "MedicalProcedure",
+     "@id": "https://lke081384-maker.github.io/songdo-kids-pediatrics/clinics/vaccination/#service",
      "name": "예방접종",
-     "url": "https://lke081384-maker.github.io/songdo-kids-pediatrics/clinics/vaccination/"
+     "description": "신생아부터 소아, 성인까지 필요한 예방접종.",
+     "url": "https://lke081384-maker.github.io/songdo-kids-pediatrics/clinics/vaccination/",
+     "relevantSpecialty": "https://schema.org/Pediatric"
     },
     {
      "@type": "MedicalTherapy",
+     "@id": "https://lke081384-maker.github.io/songdo-kids-pediatrics/clinics/atopy/#service",
      "name": "아토피·알레르기 진료",
-     "url": "https://lke081384-maker.github.io/songdo-kids-pediatrics/clinics/atopy/"
+     "description": "아토피 피부염과 알레르기 비염 진료. 레이저와 LED 광치료기, 초음파 장비를 함께 쓴다.",
+     "url": "https://lke081384-maker.github.io/songdo-kids-pediatrics/clinics/atopy/",
+     "relevantSpecialty": "https://schema.org/Pediatric"
     },
     {
      "@type": "MedicalTest",
+     "@id": "https://lke081384-maker.github.io/songdo-kids-pediatrics/clinics/growth/#service",
      "name": "키 성장 검사(골연령 측정)",
-     "url": "https://lke081384-maker.github.io/songdo-kids-pediatrics/clinics/growth/"
+     "description": "문진, 신체 계측, 유전적 예측 키 계산, 골연령 측정, 예측 키 계산, 혈액·소변 검사의 여섯 단계로 성장 상태를 확인한다. 골연령은 왼손과 손목을 저선량 X-ray로 촬영해 본다.",
+     "url": "https://lke081384-maker.github.io/songdo-kids-pediatrics/clinics/growth/",
+     "relevantSpecialty": "https://schema.org/Pediatric"
     },
     {
      "@type": "MedicalTest",
+     "@id": "https://lke081384-maker.github.io/songdo-kids-pediatrics/clinics/vision/#service",
      "name": "소아 시력 검사",
-     "url": "https://lke081384-maker.github.io/songdo-kids-pediatrics/clinics/vision/"
+     "description": "시력검사표를 읽지 못하는 아이도 받을 수 있는 굴절검사. 생후 6개월부터, 사시·근시·원시·난시 등 일곱 가지를 1분 안에 검사한다.",
+     "url": "https://lke081384-maker.github.io/songdo-kids-pediatrics/clinics/vision/",
+     "relevantSpecialty": "https://schema.org/Pediatric"
     }
    ],
    "employee": {
@@ -142,6 +180,17 @@
    "name": "황선태",
    "jobTitle": "원장, 소아청소년과 전문의",
    "description": "소아청소년과 전문의, 소아청소년과 의학 석사, 삼성서울병원 아토피센터 연수",
+   "url": "https://lke081384-maker.github.io/songdo-kids-pediatrics/about/",
+   "knowsAbout": [
+    "소아청소년과",
+    "아토피 피부염",
+    "알레르기 비염"
+   ],
+   "hasCredential": {
+    "@type": "EducationalOccupationalCredential",
+    "name": "소아청소년과 전문의",
+    "credentialCategory": "전문의 자격"
+   },
    "worksFor": {
     "@id": "https://lke081384-maker.github.io/songdo-kids-pediatrics/#clinic"
    },
@@ -187,8 +236,18 @@
    "about": {
     "@id": "https://lke081384-maker.github.io/songdo-kids-pediatrics/#clinic"
    },
+   "author": {
+    "@id": "https://lke081384-maker.github.io/songdo-kids-pediatrics/#clinic"
+   },
+   "publisher": {
+    "@id": "https://lke081384-maker.github.io/songdo-kids-pediatrics/#clinic"
+   },
    "primaryImageOfPage": "https://lke081384-maker.github.io/songdo-kids-pediatrics/assets/og.jpg",
-   "dateModified": "2026-11-14"
+   "abstract": "송도키즈 소아청소년과의원은 인천광역시 연수구 송도문화로28번길 28 글로벌캠퍼스푸르지오 204동 상가 2층 201호에 있습니다. 평일은 오전 8시 30분부터 오후 6시 30분까지(점심시간 오후 1~2시), 토요일은 오전 9시부터 오후 1시 30분까지 점심시간 없이 진료하고, 일요일과 공휴일은 쉽니다. 상가 지하 주차장을 3시간 무료로 쓸 수 있고, 인천 1호선 테크노파크역이 가깝습니다. 전화번호는 0507-1347-8115입니다.",
+   "dateModified": "2026-11-16",
+   "mainEntity": {
+    "@id": "https://lke081384-maker.github.io/songdo-kids-pediatrics/#clinic"
+   }
   },
   {
    "@type": "BreadcrumbList",
@@ -242,6 +301,11 @@
     <nav class="crumbs" aria-label="현재 위치"><ol><li><a href="../">홈</a></li><li><span aria-current="page">오시는 길</span></li></ol></nav>
     <h1>오시는 길</h1>
     <p class="page-lead">글로벌캠퍼스푸르지오 204동 상가 2층에 있습니다.<br>상가 지하 주차장은 3시간 무료입니다.</p>
+    <section class="keyfacts" aria-labelledby="keyfacts-title">
+      <h2 class="keyfacts-title" id="keyfacts-title">한눈에 보기</h2>
+      <ul><li>송도키즈 소아청소년과의원은 인천광역시 연수구 송도문화로28번길 28 글로벌캠퍼스푸르지오 204동 상가 2층 201호에 있습니다.</li><li>평일은 오전 8시 30분부터 오후 6시 30분까지(점심시간 오후 1~2시), 토요일은 오전 9시부터 오후 1시 30분까지 점심시간 없이 진료하고, 일요일과 공휴일은 쉽니다.</li><li>상가 지하 주차장을 3시간 무료로 쓸 수 있고, 인천 1호선 테크노파크역이 가깝습니다.</li><li>전화번호는 0507-1347-8115입니다.</li></ul>
+      <p class="updated">마지막 수정 <time datetime="2026-11-16">2026년 11월 16일</time></p>
+    </section>
   </div>
 </div>
 <section class="section section-tight" aria-labelledby="place-title">
@@ -379,6 +443,7 @@
   </div>
   <div class="wrap footer-base">
     <p>이 사이트의 내용은 일반적인 안내입니다. 진단과 치료는 진찰한 뒤에 결정합니다.</p>
+    
     <p><a href="https://lke081384-maker.github.io/songdo-kids-clinic/" target="_blank" rel="noopener">부설 송도키즈 학습심리발달클리닉<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M14 4h6v6M20 4l-9 9M18 14v5a1 1 0 0 1-1 1H5a1 1 0 0 1-1-1V7a1 1 0 0 1 1-1h5"/></svg><span class="sr-only">(새 창)</span></a></p>
   </div>
 </footer>
