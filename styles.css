@@ -4097,3 +4097,226 @@ tbody th {
     white-space: normal;
   }
 }
+
+/* ───── 예방접종·영유아검진 일정 계산기 ───── */
+
+.sched-form {
+  display: grid;
+  gap: 18px;
+  margin-top: 18px;
+}
+
+.sched-form .btn {
+  justify-self: start;
+  min-height: 52px;
+  min-width: 9em;
+}
+
+.sched-opts {
+  display: grid;
+  gap: 16px;
+}
+
+.opt {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  min-width: 0;
+}
+
+.opt legend {
+  padding: 0;
+  font-weight: 700;
+  font-size: 1rem;
+}
+
+.opt-sub {
+  color: var(--ink-2);
+  font-weight: 500;
+  font-size: 0.9375rem;
+}
+
+.opt-row {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  margin-top: 8px;
+}
+
+.opt-row label {
+  position: relative;
+  cursor: pointer;
+}
+
+.opt-row input {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  margin: 0;
+  opacity: 0;
+  cursor: pointer;
+}
+
+.opt-row span {
+  display: inline-flex;
+  align-items: center;
+  min-height: 44px;
+  padding: 0 16px;
+  border: 2px solid var(--field);
+  border-radius: 999px;
+  background: #fff;
+  font-weight: 600;
+  font-size: 0.9375rem;
+  transition: background-color 160ms ease, border-color 160ms ease, color 160ms ease;
+}
+
+.opt-row input:checked + span {
+  border-color: var(--mint-deep);
+  background: var(--mint-deep);
+  color: #fff;
+}
+
+.opt-row input:focus-visible + span {
+  outline: 3px solid var(--focus);
+  outline-offset: 2px;
+}
+
+.sched-msg {
+  margin-top: 20px;
+}
+
+.sched-msg:empty,
+.sched-out:empty {
+  display: none;
+}
+
+.sched-group {
+  margin-top: 22px;
+}
+
+.sched-group h3 {
+  font-size: 1.0625rem;
+  font-weight: 800;
+}
+
+.sched-list {
+  display: grid;
+  gap: 8px;
+  margin-top: 10px;
+}
+
+.sched-item {
+  display: grid;
+  grid-template-columns: 11em minmax(0, 1fr);
+  gap: 6px 16px;
+  align-items: start;
+  padding: 14px 16px;
+  border-radius: var(--r-sm);
+  background: var(--sage);
+}
+
+.sched-item.is-now {
+  background: #fff;
+  box-shadow: inset 0 0 0 2px var(--mint-deep);
+}
+
+.sched-item.is-past {
+  background: transparent;
+  box-shadow: inset 0 0 0 1px var(--line);
+}
+
+.sched-when strong {
+  display: block;
+  font-weight: 800;
+}
+
+.sched-when span {
+  display: block;
+  white-space: nowrap;
+  color: var(--ink-2);
+  font-size: 0.9375rem;
+  font-variant-numeric: tabular-nums;
+}
+
+.sched-what {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 6px;
+}
+
+.sched-what li {
+  padding: 4px 11px;
+  border: 1px solid var(--line-2);
+  border-radius: 999px;
+  background: #fff;
+  font-size: 0.9375rem;
+  line-height: 1.5;
+}
+
+.sched-what li.is-checkup {
+  border-color: var(--caramel);
+  background: var(--sand);
+  font-weight: 700;
+}
+
+.sched-yearly {
+  margin-top: 16px;
+  padding: 12px 16px;
+  border-left: 4px solid var(--caramel);
+  background: var(--sand-soft);
+  border-radius: 0 var(--r-sm) var(--r-sm) 0;
+}
+
+.sched-past {
+  margin-top: 18px;
+}
+
+.sched-past summary {
+  display: inline-flex;
+  align-items: center;
+  min-height: 44px;
+  color: var(--mint-ink);
+  font-weight: 700;
+  cursor: pointer;
+}
+
+.sched-past .hint {
+  margin-top: 4px;
+}
+
+.sched-past .sched-group {
+  margin-top: 10px;
+}
+
+.sched-print {
+  margin-top: 20px;
+}
+
+.table-sched tbody th {
+  width: 9.5em;
+  background: var(--sand-soft);
+}
+
+@media (max-width: 640px) {
+  .sched-form .btn {
+    justify-self: stretch;
+  }
+  .sched-item {
+    grid-template-columns: 1fr;
+    padding: 12px 14px;
+  }
+  .table-sched tbody th {
+    width: 6.5em;
+    white-space: normal;
+  }
+}
+
+@media print {
+  .side,
+  .sched-form,
+  .sched-print,
+  .closing {
+    display: none !important;
+  }
+}

@@ -269,6 +269,177 @@
     });
   }
 
+  /* ── 예방접종·영유아검진 일정 계산기 ──
+     일정표는 페이지에 심어 둔 JSON(#sched-data)에서 읽는다. 원본은 src/schedule.json 이고 build.py 가 넣어 준다.
+     넣은 생년월일은 이 화면에서만 쓰고 저장하거나 보내지 않는다. */
+  var schedForm = $("sched-form");
+  var schedDataEl = $("sched-data");
+  if (schedForm && schedDataEl) {
+    var SCHED = JSON.parse(schedDataEl.textContent);
+    var sBirth = $("s-birth");
+    var sError = $("s-birth-error");
+    var sMsg = $("sched-msg");
+    var sOut = $("sched-out");
+    var sShown = false;
+    var maxBirth = addMonths(todayLocal, 12); /* 출산 예정일도 넣을 수 있게 1년 뒤까지 */
+    sBirth.max = [maxBirth.getFullYear(), String(maxBirth.getMonth() + 1).padStart(2, "0"), String(maxBirth.getDate()).padStart(2, "0")].join("-");
+
+    /* 나이 구간 → 날짜 구간. "생후 4~6개월"은 만 4개월이 되는 날부터 만 7개월이 되기 전날까지 */
+    var schedWindow = function (birth, e) {
+      if (e.unit === "birth") return { from: birth, to: birth };
+      if (e.unit === "days") return { from: addDays(birth, e.from), to: addDays(birth, e.to) };
+      var k = e.unit === "years" ? 12 : 1;
+      return { from: addMonths(birth, e.from * k), to: addDays(addMonths(birth, (e.to + 1) * k), -1) };
+    };
+    var picked = function (name) {
+      var r = schedForm.querySelector('input[name="' + name + '"]:checked');
+      return r ? r.value : "";
+    };
+    /* 백신 종류를 골랐으면 그 백신의 접종만 남긴다 */
+    var keepItem = function (only) {
+      if (!only) return true;
+      var choice = only === "rv5" ? picked("s-rv") : picked("s-je");
+      return !choice || choice === only;
+    };
+    var itemText = function (it) {
+      return it[0] + " " + it[1] + (it[3] ? " (" + it[3] + ")" : "");
+    };
+    var ageText = function (birth) {
+      var m = (todayLocal.getFullYear() - birth.getFullYear()) * 12 + todayLocal.getMonth() - birth.getMonth();
+      if (addMonths(birth, m) > todayLocal) m -= 1;
+      if (m < 1) return "생후 " + Math.round((todayLocal - birth) / 864e5) + "일";
+      if (m < 24) return "생후 " + m + "개월";
+      return "만 " + Math.floor(m / 12) + "세" + (m % 12 ? " " + (m % 12) + "개월" : "");
+    };
+    var rangeText = function (e) {
+      return e.from.getTime() === e.to.getTime() ? fmt(e.from) : fmt(e.from) + " ~ " + fmt(e.to);
+    };
+    var sFail = function (msg) {
+      sError.textContent = msg;
+      sError.hidden = false;
+      sBirth.setAttribute("aria-invalid", "true");
+      sMsg.textContent = "";
+      sOut.textContent = "";
+      sShown = false;
+      sBirth.focus();
+    };
+
+    var schedSection = function (title, entries, cls) {
+      var box = el("section", "sched-group " + cls);
+      if (title) box.appendChild(el("h3", "", title));
+      var list = el("ul", "sched-list");
+      list.setAttribute("role", "list");
+      entries.forEach(function (e) {
+        var li = el("li", "sched-item is-" + e.status);
+        var when = el("div", "sched-when");
+        when.appendChild(el("strong", "", e.label));
+        when.appendChild(el("span", "", rangeText(e)));
+        li.appendChild(when);
+        var what = el("ul", "sched-what");
+        what.setAttribute("role", "list");
+        e.items.forEach(function (t) {
+          what.appendChild(el("li", e.kind === "checkup" ? "is-checkup" : "", t));
+        });
+        li.appendChild(what);
+        list.appendChild(li);
+      });
+      box.appendChild(list);
+      return box;
+    };
+
+    var renderSched = function () {
+      var birth = parseDate(sBirth.value);
+      if (!birth) return sFail("생년월일을 넣어 주세요. 예: 2026년 3월 15일");
+      if (birth > maxBirth) return sFail("날짜가 너무 먼 미래입니다. 생년월일이나 출산 예정일을 다시 확인해 주세요.");
+      if (birth.getFullYear() < 1990) return sFail("생년월일의 연도를 다시 확인해 주세요.");
+      sError.hidden = true;
+      sError.textContent = "";
+      sBirth.removeAttribute("aria-invalid");
+
+      var entries = [];
+      SCHED.vaccines.forEach(function (g) {
+        var items = g.items.filter(function (it) {
+          return keepItem(it[2]);
+        });
+        if (!items.length) return;
+        var w = schedWindow(birth, g);
+        entries.push({ kind: "vac", label: g.label, from: w.from, to: w.to, items: items.map(itemText) });
+      });
+      SCHED.checkups.forEach(function (c) {
+        var w = schedWindow(birth, c);
+        entries.push({ kind: "checkup", label: c.label, from: w.from, to: w.to, items: ["영유아 건강검진 " + c.no + "차"] });
+      });
+      entries.sort(function (a, b) {
+        return a.from - b.from || a.to - b.to || (a.kind === "vac" ? -1 : 1);
+      });
+      entries.forEach(function (e) {
+        e.status = todayLocal > e.to ? "past" : todayLocal >= e.from ? "now" : "next";
+      });
+      var by = function (s) {
+        return entries.filter(function (e) {
+          return e.status === s;
+        });
+      };
+      var now = by("now");
+      var next = by("next");
+      var past = by("past");
+      var unborn = birth > todayLocal;
+
+      var parts = [];
+      parts.push(unborn ? "출산 예정일 " + fmtLong(birth) + " 기준입니다." : "오늘 기준 " + ageText(birth) + "입니다.");
+      if (now.length) parts.push("표준 일정으로 지금 시기에 해당하는 일정이 " + now.length + "건 있습니다.");
+      if (next.length) parts.push("다음 일정은 " + fmtLong(next[0].from) + "부터 시작하는 " + next[0].items[0] + (next[0].items.length > 1 ? " 등" : "") + "입니다.");
+      if (!now.length && !next.length) parts.push("어린이 표준 예방접종과 영유아 건강검진 시기가 모두 지났습니다. 빠진 접종이 있는지는 예방접종도우미에서 확인해 보세요.");
+      sMsg.textContent = "";
+      sMsg.appendChild(el("p", "calc-msg", parts.join(" ")));
+
+      sOut.textContent = "";
+      if (now.length) sOut.appendChild(schedSection("지금 시기인 일정", now, "is-now"));
+      if (next.length) sOut.appendChild(schedSection("다가오는 일정", next, "is-next"));
+      (SCHED.yearly || []).forEach(function (y) {
+        var start = addMonths(birth, y.from_months);
+        var text = start > todayLocal
+          ? y.name + " 접종은 생후 " + y.from_months + "개월이 되는 " + fmtLong(start) + "부터 해마다 맞습니다."
+          : y.name + " 접종은 해마다 맞습니다(생후 " + y.from_months + "개월부터).";
+        sOut.appendChild(el("p", "sched-yearly", text));
+      });
+      if (past.length) {
+        var d = el("details", "sched-past");
+        d.appendChild(el("summary", "", "표준 시기가 지난 일정 " + past.length + "건 보기"));
+        d.appendChild(el("p", "hint", "맞았는지는 아기수첩이나 질병관리청 예방접종도우미에서 확인해 주세요. 빠진 접종이 있으면 진료실에서 일정을 다시 잡습니다."));
+        d.appendChild(schedSection("", past, "is-past"));
+        sOut.appendChild(d);
+      }
+      var print = el("button", "btn btn-ghost sched-print", "이 일정 인쇄하기");
+      print.type = "button";
+      print.addEventListener("click", function () {
+        var det = sOut.querySelector("details");
+        if (det) det.open = true;
+        window.print();
+      });
+      sOut.appendChild(print);
+      sShown = true;
+    };
+
+    sBirth.addEventListener("input", function () {
+      if (sBirth.getAttribute("aria-invalid") === "true" && sBirth.value) {
+        sError.hidden = true;
+        sError.textContent = "";
+        sBirth.removeAttribute("aria-invalid");
+      }
+    });
+    schedForm.addEventListener("submit", function (e) {
+      e.preventDefault();
+      renderSched();
+    });
+    /* 결과를 본 뒤 백신 종류를 바꾸면 바로 다시 계산한다 */
+    Array.prototype.forEach.call(schedForm.querySelectorAll('input[type="radio"]'), function (r) {
+      r.addEventListener("change", function () {
+        if (sShown) renderSched();
+      });
+    });
+  }
+
   /* ── 주소 복사 ── */
   var copyBtn = $("copy-addr");
   if (copyBtn) {
