@@ -2806,7 +2806,83 @@ tbody th {
   font-variant-numeric: tabular-nums;
 }
 
+.fees-lead {
+  margin: 14px 0 0;
+  color: var(--ink-2);
+  font-size: 0.9375rem;
+}
+
+.fees tbody + tbody .fees-group th {
+  padding-top: 26px;
+}
+
+.fees .fees-group th {
+  padding-top: 18px;
+  padding-bottom: 8px;
+  border-bottom: 1px solid var(--line-2);
+  color: var(--mint-deep);
+  font-size: 0.9375rem;
+  font-weight: 700;
+}
+
+.fees-desc {
+  display: block;
+  margin-top: 4px;
+  color: var(--ink-2);
+  font-size: 0.875rem;
+  font-weight: 400;
+  line-height: 1.55;
+}
+
+.fees-notes {
+  margin: 6px 0 14px;
+  padding-top: 14px;
+  border-top: 1px solid var(--line-2);
+  color: var(--ink-2);
+  font-size: 0.875rem;
+  line-height: 1.6;
+}
+
+.fees-notes h4 {
+  margin: 0 0 6px;
+  color: var(--ink);
+  font-size: 0.9375rem;
+}
+
+.fees-notes ul {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.fees-notes li {
+  position: relative;
+  padding-left: 1.1em;
+}
+
+.fees-notes li + li {
+  margin-top: 4px;
+}
+
+.fees-notes li::before {
+  content: "※";
+  position: absolute;
+  left: 0;
+}
+
+#fees-docs td {
+  white-space: nowrap;
+}
+
 @media (max-width: 560px) {
+  .fees .fees-group {
+    padding: 0;
+    border-bottom: 0;
+  }
+  .fees .fees-group th {
+    padding: 16px 0 8px;
+    border-bottom: 1px solid var(--line-2);
+  }
   .fees tr {
     display: grid;
     padding: 12px 0;
